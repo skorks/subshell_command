@@ -2,8 +2,6 @@ require "subshell_command/version"
 require "open3"
 
 module SubshellCommand
-  VERSION = "0.1.0"
-
   class Command
     attr_reader :command_string
     attr_reader :env_hash, :current_directory
