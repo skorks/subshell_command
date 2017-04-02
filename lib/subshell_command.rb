@@ -141,15 +141,3 @@ module SubshellCommand
     end
   end
 end
-
-# result = SubshellCommand.execute do |o|
-#   o.cmd = "pwd"
-#   o.redirect_stderr_to_stdout = true
-#   o.on_success = ->(r) do
-#     puts r.stdout_value
-#   end
-#   o.on_failure = ->(r) do
-#     puts r.stderr_value
-#   end
-# end
-# p result

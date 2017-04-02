@@ -20,7 +20,49 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Simplest form:
+
+```ruby
+result = SubshellCommand.execute("ls -al")
+if result.success?
+  puts result.stdout_value
+else
+  puts result.stderr_value
+end
+```
+
+But we can do a little better with a block:
+
+```ruby
+SubshellCommand.execute("ls -al") do |o|
+  o.cmd = "pwd"                       # we can override the command
+  o.redirect_stderr_to_stdout = true  # we can pipe stderr to stdout
+  o.current_directory = "/"           # we can override the working directory
+  o.env = {                           # we can provide some extra env vars
+    FOO: "bar"
+  }    
+  o.on_success = ->(r) do             # we can provide a success callback
+    puts r.stdout_value
+  end
+  o.on_failure = ->(r) do             # we can provide a failure callback
+    puts r.stderr_value
+  end
+end
+```
+
+All of the above options have sensible defaults, so you can get away with:
+
+```ruby
+SubshellCommand.execute("ls -al") do |o|
+  o.on_success = ->(result) do             
+    puts result.stdout_value
+  end
+end
+```
+
+If all you care about is doing something when the command succeeds.
+
+Also all the code for this is in one file, which is on purpose, so if you'd rather not add an extra gem, just grab the file, dump it into your project and off you go.
 
 ## Development
 
