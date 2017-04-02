@@ -1,8 +1,6 @@
 # SubshellCommand
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/subshell_command`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+If, like me, you always forget when and how (and why) to use backticks or popen or whatever when trying to execute a shell command from within a ruby process, this should hopefully make life a little bit easier.
 
 ## Installation
 
@@ -38,4 +36,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

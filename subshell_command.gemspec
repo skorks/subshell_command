@@ -10,8 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["alan@skorks.com"]
 
   spec.summary       = %q{Simpler way to execute shell commands from within ruby processes}
-  spec.description   = %q{Simpler way to execute shell commands from within ruby processes.}
-  spec.homepage      = ""
+  spec.description   = %q{If, like me, you always forget when and how (and why) to
+    use backticks or popen or whatever when trying to execute a shell command from
+    within a ruby process, this should hopefully make life a little bit easier.}
+  spec.homepage      = "https://github.com/skorks/subshell_command"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
